@@ -1,5 +1,5 @@
 build:
-	hugo
+	hugo -D
 
 post:
 	hugo new posts/$(POST_NAME).md
