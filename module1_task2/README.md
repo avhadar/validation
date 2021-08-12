@@ -19,12 +19,16 @@ In the DevOps methodology, while tools often change, the "development" lifecycle
 * "Clean": Cleanup the content of the directory dist/
 * "Post": Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME.
 
+Additionally:
+* "Help": Shows a help menu with short descriptions of the make commands
+
 ## Usage
 
 * make build : executes the "Build" step
 * make clean : executes the "Clean" step 
 * make post  : executes the "Post" step
-* make help  : shows a short description of the steps
+* make help  : shows a short description of the steps, "Help" menu
+
  
 
 
