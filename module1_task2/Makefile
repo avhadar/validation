@@ -3,6 +3,7 @@ build:    ## Build the website
 
 post:     ## Create a new post using a filename and title
 	hugo new posts/$(POST_NAME).md
+	@sed -i 's/title:.*/title: $(POST_TITLE)/g' content/posts/$(POST_NAME).md
 
 clean:    ## clean the output directory
 	rm -rf dist/
