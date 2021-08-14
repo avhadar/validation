@@ -1,5 +1,5 @@
 build:  ## Build the awesome-api binary
-	@cd awesome-api && go build
+	@cp main.go ./awesome-api/ && cd awesome-api && go build
 
 run:    ## Run the API in background and write logs
 	@cd awesome-api && ./awesome-api >./awesome-api.log 2>&1 &
@@ -12,8 +12,8 @@ clean:  ## Delete the awesome-api binary and the logfile
 
 test:  ## Test the application
 	curl "http://localhost:9999"
-	echo "HIT: healthcheck" >>./awesome-api/awesome-api.log 2>&1
-	echo >>./awesome-api/awesome-api.log 2>&1
+	echo "HIT: healthcheck" >> ./awesome-api/awesome-api.log 2>&1
+	echo >> ./awesome-api/awesome-api.log 2>&1
 	curl "http://localhost:9999/health"
 
 .PHONY : help
