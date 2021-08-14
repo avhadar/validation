@@ -6,18 +6,15 @@ run:    ## Run the API in background and write logs
 	./awesome-api >./awesome-api.log 2>&1 &
 
 stop:   ## Stop the application
-	kill "$(shell pgrep awesome-api)"
+	@kill "$(shell pgrep awesome-api)"
 
 clean:  ## Delete the awesome-api binary and the logfile
-	rm awesome-api awesome-api.log
+	@rm awesome-api awesome-api.log
 
 test:  ## Test the application
-	curl "http://localhost:9999" >>./awesome-api.log 2>&1
-	echo >>./awesome-api.log 2>&1
-	echo "HIT: healthcheck" >>./awesome-api.log 2>&1
-	echo >>./awesome-api.log 2>&1
-	curl "http://localhost:9999/health" >>./awesome-api.log 2>&1 &
-	echo >>./awesome-api.log 2>&1
+	curl "http://localhost:9999"
+	@echo "HIT: healthcheck" >>./awesome-api.log 2>&1
+	curl "http://localhost:9999/health"
 
 .PHONY : help
 help: Makefile  ## generate Help menu with command descriptions
